@@ -27,7 +27,7 @@ public static class TreeReader
             levels[nodeLevel].Add(node?.val);
 
             //enqueue children
-            if (node?.left != null || node?.right != null)
+            if (node != null)
             {
                 children.Enqueue((node?.left, nodeLevel + 1));
                 children.Enqueue((node?.right, nodeLevel + 1));
@@ -35,12 +35,14 @@ public static class TreeReader
         }
 
         //trim nulls
-        var last = levels.Last();
-        while (last.LastIndexOf(null) == last.Count - 1)
+        var flatten = levels.SelectMany(x => x).ToList();
+
+        while (flatten.LastIndexOf(null) == flatten.Count - 1
+               && flatten.Count > 0)
         {
-            last.RemoveAt(last.Count - 1);
+            flatten.RemoveAt(flatten.Count - 1);
         }
 
-        return levels.SelectMany(x => x).ToArray();
+        return flatten.ToArray();
     }
 }
