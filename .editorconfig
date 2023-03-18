@@ -1,0 +1,1 @@
+root = true[*.cs]charset = utf-8resharper_inconsistent_naming_highlighting = noneresharper_csharp_naming_rule.private_instance_fields = do_not_check[*.{cs,json}]indent_style = spaceindent_size = 4
