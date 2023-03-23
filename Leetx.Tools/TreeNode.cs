@@ -1,8 +1,11 @@
+using System.Diagnostics;
+
 namespace Leetx.Tools;
 
 /// <summary>
 /// Leetcode data structure
 /// </summary>
+[DebuggerDisplay("{val}, children: {left?.val}, {right?.val}")]
 public class TreeNode
 {
     public TreeNode? left;

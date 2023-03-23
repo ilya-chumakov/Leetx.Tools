@@ -1,8 +1,11 @@
+using System.Diagnostics;
+
 namespace Leetx.Tools;
 
 /// <summary>
 /// Leetcode data structure
 /// </summary>
+[DebuggerDisplay("{val}, next: {next?.val}")]
 public class ListNode
 {
     public int val;
