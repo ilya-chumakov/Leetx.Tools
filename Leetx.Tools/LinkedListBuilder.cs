@@ -4,6 +4,8 @@ public class LinkedListBuilder
 {
     public static ListNode? Create(IList<int> values)
     {
+        if (values == null) return null;
+
         ListNode? tail = null;
         for (int i = values.Count - 1; i >= 0; i--)
         {
