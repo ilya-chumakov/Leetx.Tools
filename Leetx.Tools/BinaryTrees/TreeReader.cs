@@ -1,4 +1,4 @@
-namespace Leetx.Tools;
+namespace Leetx.Tools.BinaryTrees;
 
 public static class TreeReader
 {

@@ -1,4 +1,6 @@
-namespace Leetx.Tools.Tests;
+using Leetx.Tools.BinaryTrees;
+
+namespace Leetx.Tools.Tests.BinaryTrees;
 
 public class TreeEquality_Tests
 {

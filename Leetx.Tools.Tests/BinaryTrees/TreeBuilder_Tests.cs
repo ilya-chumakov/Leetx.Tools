@@ -1,4 +1,6 @@
-namespace Leetx.Tools.Tests
+using Leetx.Tools.BinaryTrees;
+
+namespace Leetx.Tools.Tests.BinaryTrees
 {
     public class TreeBuilder_Tests
     {
@@ -22,10 +24,10 @@ namespace Leetx.Tools.Tests
         public void CreateBinaryTree_LeftSubtree_OK()
         {
             var actual = TreeBuilder.CreateBinaryTree(new int?[] { 1, 2 });
-            
+
             Assert.Equal(1, actual.val);
             Assert.Equal(2, actual.left!.val);
-            
+
             Assert.Null(actual.left.left);
             Assert.Null(actual.left.right);
             Assert.Null(actual.right);

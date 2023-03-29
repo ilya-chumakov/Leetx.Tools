@@ -1,4 +1,4 @@
-namespace Leetx.Tools;
+namespace Leetx.Tools.BinaryTrees;
 
 public static class TreeBuilder
 {
@@ -14,7 +14,7 @@ public static class TreeBuilder
         if (n == 0) return null;
 
         var nodes = new TreeNode[n];
-        
+
         for (int i = 0; i < n; i++)
         {
             if (values[i] != null)
@@ -38,7 +38,7 @@ public static class TreeBuilder
                     break;
                 }
                 nodes[i].left = nodes[leftIdx];
-                
+
                 int rightIdx = 2 * i + 2 - preNull * 2;
                 if (rightIdx >= n)
                 {

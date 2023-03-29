@@ -1,4 +1,4 @@
-namespace Leetx.Tools;
+namespace Leetx.Tools.LinkedLists;
 
 public class LinkedListBuilder
 {

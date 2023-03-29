@@ -1,11 +1,13 @@
-namespace Leetx.Tools.Tests;
+using Leetx.Tools.LinkedLists;
+
+namespace Leetx.Tools.Tests.LinkedLists;
 
 public class LinkedListBuilder_Tests
 {
     [Fact]
     public void Create_Default_OK()
     {
-        var actual = LinkedListBuilder.Create(new[] { 3, 2, 1});
+        var actual = LinkedListBuilder.Create(new[] { 3, 2, 1 });
         Assert.Equal(3, actual.val);
         Assert.Equal(2, actual.next.val);
         Assert.Equal(1, actual.next.next.val);

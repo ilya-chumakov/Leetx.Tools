@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Leetx.Tools;
+namespace Leetx.Tools.BinaryTrees;
 
 /// <summary>
 /// Leetcode data structure

@@ -1,4 +1,4 @@
-namespace Leetx.Tools;
+namespace Leetx.Tools.BinaryTrees;
 
 public static class TreeNodeExtensions
 {
@@ -9,7 +9,7 @@ public static class TreeNodeExtensions
             return root;
         }
 
-        return FindByValue(root.left, val) ?? FindByValue(root.right, val);
+        return root.left.FindByValue(val) ?? root.right.FindByValue(val);
     }
 
     public static int?[] SelectValuesToArray(this TreeNode? head)
