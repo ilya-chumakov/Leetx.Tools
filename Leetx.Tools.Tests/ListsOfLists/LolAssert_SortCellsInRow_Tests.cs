@@ -1,15 +1,15 @@
-using Leetx.Tools.LinkedLists;
+using Leetx.Tools.ListsOfLists;
 using Xunit.Sdk;
 
-namespace Leetx.Tools.Tests.LinkedLists;
+namespace Leetx.Tools.Tests.ListsOfLists;
 
-public class LolAssert_SortRows_Tests
+public class LolAssert_SortCellsInRow_Tests
 {
     public static void TryEqual(bool isEqual, int[][] expected, int[][] actual)
     {
         try
         {
-            LolAssert.Equal(expected, actual, keepRowOrder: false);
+            LolAssert.Equal(expected, actual, keepCellInRowOrder: false);
         }
         catch (EqualException)
         {
@@ -30,9 +30,9 @@ public class LolAssert_SortRows_Tests
         };
         var actual = new[]
         {
-            new[] { 7, 7, 8 },
-            new[] { 1, 2, a },
-            new[] { 3, 4, 5 }
+            new[] { a, 2, 1 },
+            new[] { 3, 4, 5 },
+            new[] { 7, 8, 7 },
         };
 
         TryEqual(isEqual, expected, actual);
@@ -49,7 +49,7 @@ public class LolAssert_SortRows_Tests
         };
         var actual = new[]
         {
-            new[] { 0, 1, 2, a },
+            new[] { 0, 2, a,1 },
         };
 
         TryEqual(isEqual, expected, actual);
@@ -69,8 +69,8 @@ public class LolAssert_SortRows_Tests
         var actual = new[]
         {
             new[] { 0 },
-            new[] { a },
             new[] { 1 },
+            new[] { a },
         };
 
         TryEqual(isEqual, expected, actual);
@@ -79,7 +79,7 @@ public class LolAssert_SortRows_Tests
     [Theory]
     [InlineData(2, true)]
     [InlineData(3, false)]
-    public void Equal_Single_OK(int a3, bool isEqual)
+    public void Equal_Single_OK(int a, bool isEqual)
     {
         var expected = new[]
         {
@@ -87,7 +87,7 @@ public class LolAssert_SortRows_Tests
         };
         var actual = new[]
         {
-            new[] { a3 }
+            new[] { a }
         };
 
         TryEqual(isEqual, expected, actual);

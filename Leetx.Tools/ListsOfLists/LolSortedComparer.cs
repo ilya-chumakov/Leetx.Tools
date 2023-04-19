@@ -1,4 +1,6 @@
-namespace Leetx.Tools.LinkedLists;
+using Leetx.Tools.LinkedLists;
+
+namespace Leetx.Tools.ListsOfLists;
 
 public class LolSortedComparer :
     ListComparer,
