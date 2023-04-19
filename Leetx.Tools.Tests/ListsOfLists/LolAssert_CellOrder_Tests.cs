@@ -3,13 +3,13 @@ using Xunit.Sdk;
 
 namespace Leetx.Tools.Tests.ListsOfLists;
 
-public class LolAssert_SortCellsInRow_Tests
+public class LolAssert_CellOrder_Tests
 {
     public static void TryEqual(bool isEqual, int[][] expected, int[][] actual)
     {
         try
         {
-            LolAssert.Equal(expected, actual, keepCellInRowOrder: false);
+            LolAssert.Equal(expected, actual, keepCellOrder: false);
         }
         catch (EqualException)
         {

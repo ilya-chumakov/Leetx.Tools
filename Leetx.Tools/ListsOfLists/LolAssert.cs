@@ -8,7 +8,7 @@ public static class LolAssert
         IList<IList<int>> expected,
         IList<IList<int>> actual,
         bool keepRowOrder = true,
-        bool keepCellInRowOrder = true)
+        bool keepCellOrder = true)
     {
         Assert.Equal(expected.Count, actual.Count);
 
@@ -20,7 +20,7 @@ public static class LolAssert
             ? actual
             : CopyBuilder.CreateOrderedCopy(actual);
 
-        if (keepCellInRowOrder)
+        if (keepCellOrder)
         {
             Assert.Equal(expectedPrepared, actualPrepared);
         }

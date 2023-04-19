@@ -3,7 +3,7 @@ using Xunit.Sdk;
 
 namespace Leetx.Tools.Tests.ListsOfLists;
 
-public class LolAssert_SortRows_Tests
+public class LolAssert_RowOrder_Tests
 {
     public static void TryEqual(bool isEqual, int[][] expected, int[][] actual)
     {
