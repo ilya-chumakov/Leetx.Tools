@@ -5,7 +5,7 @@ namespace Leetx.Tools.Tests.ListsOfLists;
 
 public class LolAssert_Strict_Tests
 {
-    public static void TryEqual(bool isEqual, int[][] expected, int[][] actual)
+    public static void TryEqual(bool areEqual, int[][] expected, int[][] actual)
     {
         try
         {
@@ -13,14 +13,14 @@ public class LolAssert_Strict_Tests
         }
         catch (EqualException)
         {
-            if (isEqual) throw;
+            if (areEqual) throw;
         }
     }
 
     [Theory]
     [InlineData(2, false)]
     [InlineData(3, true)]
-    public void Equal_3x3_OK(int a, bool isEqual)
+    public void Equal_3x3_OK(int a, bool areEqual)
     {
         var expected = new[]
         {
@@ -35,13 +35,13 @@ public class LolAssert_Strict_Tests
             new[] { 1, 2, a }
         };
 
-        TryEqual(isEqual, expected, actual);
+        TryEqual(areEqual, expected, actual);
     }
 
     [Theory]
     [InlineData(2, true)]
     [InlineData(3, false)]
-    public void Equal_Row_OK(int a, bool isEqual)
+    public void Equal_Row_OK(int a, bool areEqual)
     {
         var expected = new[]
         {
@@ -52,13 +52,13 @@ public class LolAssert_Strict_Tests
             new[] { 0, 1, a, 3 }
         };
 
-        TryEqual(isEqual, expected, actual);
+        TryEqual(areEqual, expected, actual);
     }
 
     [Theory]
     [InlineData(2, true)]
     [InlineData(3, false)]
-    public void Equal_Column_OK(int a, bool isEqual)
+    public void Equal_Column_OK(int a, bool areEqual)
     {
         var expected = new[]
         {
@@ -73,13 +73,13 @@ public class LolAssert_Strict_Tests
             new[] { a }
         };
 
-        TryEqual(isEqual, expected, actual);
+        TryEqual(areEqual, expected, actual);
     }
 
     [Theory]
     [InlineData(2, true)]
     [InlineData(3, false)]
-    public void Equal_Single_OK(int a, bool isEqual)
+    public void Equal_Single_OK(int a, bool areEqual)
     {
         var expected = new[]
         {
@@ -90,7 +90,7 @@ public class LolAssert_Strict_Tests
             new[] { a }
         };
 
-        TryEqual(isEqual, expected, actual);
+        TryEqual(areEqual, expected, actual);
     }
 
     [Fact]
