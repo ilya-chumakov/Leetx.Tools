@@ -10,8 +10,6 @@ public static class LolAssert
         bool keepRowOrder = true,
         bool keepCellOrder = true)
     {
-        Assert.Equal(expected.Count, actual.Count);
-
         var expectedPrepared = keepRowOrder
             ? expected
             : CopyBuilder.CreateOrderedCopy(expected);

@@ -20,7 +20,7 @@ public class LolAssert_CellOrder_Tests
     [Theory]
     [InlineData(2, false)]
     [InlineData(3, true)]
-    public void Equal_Complex_OK(int a, bool isEqual)
+    public void Equal_3x3_OK(int a, bool isEqual)
     {
         var expected = new[]
         {
