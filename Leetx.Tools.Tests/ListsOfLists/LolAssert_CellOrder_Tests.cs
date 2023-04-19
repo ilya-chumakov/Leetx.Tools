@@ -26,13 +26,13 @@ public class LolAssert_CellOrder_Tests
         {
             new[] { 1, 2, 3 },
             new[] { 3, 4, 5 },
-            new[] { 7, 7, 8 },
+            new[] { 7, 7, 8 }
         };
         var actual = new[]
         {
             new[] { a, 2, 1 },
             new[] { 3, 4, 5 },
-            new[] { 7, 8, 7 },
+            new[] { 7, 8, 7 }
         };
 
         TryEqual(areEqual, expected, actual);
@@ -45,11 +45,11 @@ public class LolAssert_CellOrder_Tests
     {
         var expected = new[]
         {
-            new[] { 0, 1, 2, 3 },
+            new[] { 0, 1, 2, 3 }
         };
         var actual = new[]
         {
-            new[] { 0, 2, a,1 },
+            new[] { 0, 2, a, 1 }
         };
 
         TryEqual(areEqual, expected, actual);
@@ -70,7 +70,7 @@ public class LolAssert_CellOrder_Tests
         {
             new[] { 0 },
             new[] { 1 },
-            new[] { a },
+            new[] { a }
         };
 
         TryEqual(areEqual, expected, actual);
@@ -99,13 +99,12 @@ public class LolAssert_CellOrder_Tests
         var expected = new[]
         {
             new[] { 2, 3 },
-            new[] { 2, 3 },
+            new[] { 2, 3 }
         };
         var actual = new[]
         {
             new[] { 2, 3 },
-            new[] { 2, 3 },
-            new[] { 2, 3 },
+            new[] { 2, 3, 4 }
         };
 
         TryEqual(false, expected, actual);

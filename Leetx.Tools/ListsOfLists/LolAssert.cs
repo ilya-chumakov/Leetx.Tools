@@ -4,6 +4,7 @@ namespace Leetx.Tools.ListsOfLists;
 
 public static class LolAssert
 {
+    //todo SortCellsThenRows
     public static void Equal(
         IList<IList<int>> expected,
         IList<IList<int>> actual,
@@ -25,6 +26,7 @@ public static class LolAssert
         else
         {
             Assert.Equal(expectedPrepared, actualPrepared, new LolSortedComparer());
+            //Assert.Equal(expectedPrepared, actualPrepared);
         }
     }
 }
