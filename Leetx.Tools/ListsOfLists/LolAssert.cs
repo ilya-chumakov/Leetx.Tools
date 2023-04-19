@@ -4,29 +4,21 @@ namespace Leetx.Tools.ListsOfLists;
 
 public static class LolAssert
 {
-    //todo SortCellsThenRows
     public static void Equal(
         IList<IList<int>> expected,
         IList<IList<int>> actual,
-        bool keepRowOrder = true,
-        bool keepCellOrder = true)
+        SortingPolicy sortingPolicy = SortingPolicy.KeepOriginalOrder)
     {
-        var expectedPrepared = keepRowOrder
-            ? expected
-            : CopyBuilder.CreateOrderedCopy(expected);
-
-        var actualPrepared = keepRowOrder
-            ? actual
-            : CopyBuilder.CreateOrderedCopy(actual);
-
-        if (keepCellOrder)
+        if (sortingPolicy == SortingPolicy.KeepOriginalOrder)
         {
-            Assert.Equal(expectedPrepared, actualPrepared);
+            Assert.Equal(expected, actual);
         }
         else
         {
-            Assert.Equal(expectedPrepared, actualPrepared, new LolSortedComparer());
-            //Assert.Equal(expectedPrepared, actualPrepared);
+            var expectedPrepared = CopyBuilder.CreateOrderedCopy(expected, sortingPolicy);
+            var actualPrepared = CopyBuilder.CreateOrderedCopy(actual, sortingPolicy);
+
+            Assert.Equal(expectedPrepared, actualPrepared);
         }
     }
 }

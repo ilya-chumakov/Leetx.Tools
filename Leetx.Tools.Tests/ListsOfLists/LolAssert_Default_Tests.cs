@@ -3,13 +3,16 @@ using Xunit.Sdk;
 
 namespace Leetx.Tools.Tests.ListsOfLists;
 
-public class LolAssert_CellOrder_Tests
+/// <summary>
+///     For now, Default = SortingPolicy.KeepOriginalOrder
+/// </summary>
+public class LolAssert_Default_Tests
 {
     public static void TryEqual(bool areEqual, int[][] expected, int[][] actual)
     {
         try
         {
-            LolAssert.Equal(expected, actual, keepCellOrder: false);
+            LolAssert.Equal(expected, actual);
         }
         catch (EqualException)
         {
@@ -25,22 +28,22 @@ public class LolAssert_CellOrder_Tests
         var expected = new[]
         {
             new[] { 1, 2, 3 },
-            new[] { 3, 4, 5 },
-            new[] { 7, 7, 8 }
+            new[] { 1, 2, 3 },
+            new[] { 1, 2, 3 }
         };
         var actual = new[]
         {
-            new[] { a, 2, 1 },
-            new[] { 3, 4, 5 },
-            new[] { 7, 8, 7 }
+            new[] { 1, 2, 3 },
+            new[] { 1, 2, 3 },
+            new[] { 1, 2, a }
         };
 
         TryEqual(areEqual, expected, actual);
     }
 
     [Theory]
-    [InlineData(2, false)]
-    [InlineData(3, true)]
+    [InlineData(2, true)]
+    [InlineData(3, false)]
     public void Equal_Row_OK(int a, bool areEqual)
     {
         var expected = new[]
@@ -49,7 +52,7 @@ public class LolAssert_CellOrder_Tests
         };
         var actual = new[]
         {
-            new[] { 0, 2, a, 1 }
+            new[] { 0, 1, a, 3 }
         };
 
         TryEqual(areEqual, expected, actual);
@@ -104,7 +107,8 @@ public class LolAssert_CellOrder_Tests
         var actual = new[]
         {
             new[] { 2, 3 },
-            new[] { 2, 3, 4 }
+            new[] { 2, 3 },
+            new[] { 2, 3 }
         };
 
         TryEqual(false, expected, actual);
